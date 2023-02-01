@@ -9,7 +9,7 @@ import { ContractInstances, Contracts } from './contracts/contracts.module';
 import { Zaps } from './zaps/zaps.module';
 import { Pools } from './pools';
 import { Data } from './data';
-import { Provider } from '@ethersproject/providers';
+import { JsonRpcProvider } from '@ethersproject/providers';
 
 export interface BalancerSDKRoot {
   config: BalancerSdkConfig;
@@ -20,7 +20,7 @@ export interface BalancerSDKRoot {
   swaps: Swaps;
   relayer: Relayer;
   networkConfig: BalancerNetworkConfig;
-  rpcProvider: Provider;
+  provider: JsonRpcProvider;
 }
 
 export class BalancerSDK implements BalancerSDKRoot {
@@ -32,7 +32,7 @@ export class BalancerSDK implements BalancerSDKRoot {
   balancerContracts: Contracts;
   zaps: Zaps;
   readonly networkConfig: BalancerNetworkConfig;
-  readonly provider: Provider;
+  readonly provider: JsonRpcProvider;
 
   constructor(
     public config: BalancerSdkConfig,
@@ -40,7 +40,7 @@ export class BalancerSDK implements BalancerSDKRoot {
     public subgraph = new Subgraph(config)
   ) {
     this.networkConfig = getNetworkConfig(config);
-    this.provider = sor.provider;
+    this.provider = sor.provider as JsonRpcProvider;
 
     this.data = new Data(
       this.networkConfig,
@@ -57,10 +57,6 @@ export class BalancerSDK implements BalancerSDKRoot {
       sor.provider
     );
     this.zaps = new Zaps(this.networkConfig.chainId);
-  }
-
-  get rpcProvider(): Provider {
-    return this.sor.provider;
   }
 
   /**

@@ -6,6 +6,7 @@ import { Debouncer, tokenAddressForPricing } from '@/lib/utils';
 
 /**
  * Simple coingecko price source implementation. Configurable by network and token addresses.
+ * @category Data
  */
 export class CoingeckoPriceRepository implements Findable<Price> {
   prices: { [key: string]: Promise<Price> } = {};

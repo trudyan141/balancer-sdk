@@ -30,15 +30,36 @@ export { Network, AprBreakdown };
 
 export type Address = string;
 
+/**
+ * @public
+ */
 export interface BalancerSdkConfig {
-  //use a known network or provide an entirely custom config
+  /**
+   * Use a known network or provide an entirely custom config
+   * @public
+   */
   network: Network | BalancerNetworkConfig;
   rpcUrl: string;
-  //overwrite the subgraph url if you don't want to use the balancer labs maintained version
+  /**
+   * overwrite the subgraph url if you don't want to use the balancer labs maintained version
+   * @public
+   * @default https://api.thegraph.com/subgraphs/name/balancer-labs/balancer
+   */
   customSubgraphUrl?: string;
+  /**
+   * ???
+   * @public
+   */
   subgraphQuery?: GraphQLQuery;
-  //optionally overwrite parts of the standard SOR config
+  /**
+   * optionally overwrite parts of the standard SOR config
+   * @public
+   */
   sor?: Partial<BalancerSdkSorConfig>;
+  /**
+   * optionally overwrite parts of the standard Tenderly config
+   * @public
+   */
   tenderly?: BalancerTenderlyConfig;
 }
 

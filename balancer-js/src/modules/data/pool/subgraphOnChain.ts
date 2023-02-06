@@ -18,6 +18,8 @@ interface PoolsSubgraphOnChainRepositoryOptions {
 
 /**
  * Access pools using generated subgraph client and multicall.
+ * @public
+ * @category Data
  */
 export class PoolsSubgraphOnChainRepository
   implements Findable<Pool, PoolAttribute>, Searchable<Pool>

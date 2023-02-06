@@ -11,7 +11,7 @@ import { Pools } from './pools';
 import { Data } from './data';
 import { Provider } from '@ethersproject/providers';
 
-export interface BalancerSDKRoot {
+interface BalancerSDKRoot {
   config: BalancerSdkConfig;
   sor: Sor;
   subgraph: Subgraph;
@@ -23,17 +23,61 @@ export interface BalancerSDKRoot {
   rpcProvider: Provider;
 }
 
+/**
+ * Balancer SDK - services for interacting with Balancer Protocol V2.
+ *
+ * ```ts
+ * import { BalancerSDK, Network } from '@balancer-labs/sdk'
+ *
+ * const sdk = new BalancerSDK({
+ *   network: Network.MAINNET,
+ *   rpcUrl: 'https://ethereum-node:8454/...',
+ * })
+ * ```
+ *
+ * @public
+ */
 export class BalancerSDK implements BalancerSDKRoot {
+  /**
+   * @public
+   */
   readonly swaps: Swaps;
+  /**
+   * @public
+   */
   readonly relayer: Relayer;
+  /**
+   * @public
+   */
   readonly pricing: Pricing;
+  /**
+   * @public
+   */
   readonly pools: Pools;
+  /**
+   * @public
+   */
   readonly data: Data;
   balancerContracts: Contracts;
+  /**
+   * @public
+   */
   zaps: Zaps;
+  /**
+   * @public
+   */
   readonly networkConfig: BalancerNetworkConfig;
+  /**
+   * @public
+   */
   readonly provider: Provider;
 
+  /**
+   * @public
+   * @param config
+   * @param sor
+   * @param subgraph
+   */
   constructor(
     public config: BalancerSdkConfig,
     public sor = new Sor(config),
@@ -64,7 +108,8 @@ export class BalancerSDK implements BalancerSDKRoot {
   }
 
   /**
-   * Expose balancer contracts, e.g. Vault, LidoRelayer.
+   * Instantiated Balancer typechain contracts, e.g. Vault, LidoRelayer.
+   * @public
    */
   get contracts(): ContractInstances {
     return this.balancerContracts.contracts;

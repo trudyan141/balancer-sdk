@@ -27,6 +27,7 @@ export interface RewardData {
 /**
  * A lot of code to get liquidity gauge state via RPC multicall.
  * TODO: reseach helper contracts or extend subgraph
+ * @category Data
  */
 export class LiquidityGaugesMulticallRepository {
   multicall: Contract;

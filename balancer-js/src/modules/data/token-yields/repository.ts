@@ -17,6 +17,7 @@ import { Network, Findable } from '@/types';
 
 /**
  * Common interface for fetching APR from external sources
+ * @internal
  *
  * @param address is optional, used when same source, eg: aave has multiple tokens and all of them can be fetched in one call.
  */

@@ -89,6 +89,9 @@ export interface BalancerNetworkConfig {
       bal?: string;
       veBal?: string;
       bbaUsd?: string;
+      usdt?: string;
+      dai?: string;
+      lol?: string;
     };
   };
   tenderly?: BalancerTenderlyConfig;

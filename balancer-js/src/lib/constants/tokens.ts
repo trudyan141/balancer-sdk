@@ -63,6 +63,18 @@ export const TOKENS_ARBITRUM: TokenConstants = {
   },
 };
 
+export const TOKENS_AOSYS: TokenConstants = {
+  Popular: {
+    Symbols: ['WBTC', 'DAI', 'USDC', 'BAL', 'AAVE', 'WETH'],
+  },
+  Addresses: {
+    nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+    wNativeAsset: '0xEB7638A7c4eAEb25ECe59F4382b9f06a8056F980', // TODO
+    WETH: '0xEB7638A7c4eAEb25ECe59F4382b9f06a8056F980',
+    BAL: '0x1F6fB04E57ff270B2c97168e48b5bf5a1e32D8b7',
+  },
+};
+
 export const TOKENS_GNOSIS: TokenConstants = {
   Popular: {
     Symbols: ['xDAI', 'WXDAI', 'WETH', 'BAL'],

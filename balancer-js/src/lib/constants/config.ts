@@ -307,31 +307,28 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     chainId: Network.OASYS, //16116
     addresses: {
       contracts: {
-        vault: '0xBA12222222228d8Ba445958a75a0704d566BF2C8',
+        vault: '0x0855eA6187dE973Bc5849d67C14f59c6fE2cF039',
         multicall: '0xbb6fab6b627947dae0a75808250d8b2652952cb5',
         relayerV4: '0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3',
-        balancerHelpers: '0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9',
-        weightedPoolFactory: '0xf302f9F50958c5593770FDf4d4812309fF77414f',
+        balancerHelpers: '0x203d5706ddc75EC8eC69b5564802b037cC8B821A',
+        weightedPoolFactory: '0x4F6a9c852Bb5058C3e1d17824A860D60a203E71B',
         composableStablePoolFactory:
-          '0x76578ecf9a141296ec657847fb45b0585bcda3a6',
+          '0xcf3821727Baa9df36CA25a91DA330dD01A0e1743',
       },
       tokens: {
-        usdt : '0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3',
-        dai: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-        lol: '0x4F9c846Db0835c66eB605f4FC0926E6cCC89EFA3',
+        wrappedNativeAsset: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
       },
-   
     },
     urls: {
       subgraph:
-        'https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-gnosis-chain-v2',
+        'http://13.215.226.17:8000/subgraphs/name/balancer-labs/balancer-v2',
       gaugesSubgraph: '',
     },
     pools: {},
     sorConnectingTokens: [
       {
         symbol: 'weth',
-        address: '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d',
+        address: '0xEB7638A7c4eAEb25ECe59F4382b9f06a8056F980',
       },
     ],
   },
